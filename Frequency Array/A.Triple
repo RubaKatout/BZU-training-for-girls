@@ -1,0 +1,75 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+#define debug(x) cout << '[' << #x << " is: " << x << "] " << endl;
+#define imod(a , n) (a % n + n ) % n
+
+#define fastio ios_base::sync_with_stdio(false);cin.tie(0);
+#define inF freopen("ladder.in","r",stdin );
+#define outF freopen("ladder.out" , "w" , stdout ) ;
+#define sor(v) sort(v.begin() , v.end());
+#define print(v) for(auto f : v ) cout << f << " " ;
+#define rsor(v) sort(v.rbegin() , v.rend());
+#define rev(v) reverse(v.begin() , v.end());
+#define scan(v) for(auto &it : v)cin >> it ;
+
+#define logar(x , y) log(x) / log(y)
+#define __sum(n) n * (n + 1) / 2
+#define __lcm(a , b) a / __gcd(a , b) * b
+#define pii pair<int , int >
+#define ll long long
+
+#define matrix vector<vector<ll>>
+#define pii pair<int , int >
+
+const int di[] = {1 , -1 , 0 , 0};
+const int dj[] = {0 , 0 , 1 , -1};
+
+const int mod = 1e9 + 7;
+const int N = 2e5 + 10 ;
+
+int freq[N];
+int32_t main()
+
+{   //inF;
+    //inF;outF;
+    fastio;
+
+    int t ;
+    cin >> t ;
+
+    while(t--){
+
+
+        int n ;//3
+        cin >> n ;
+
+        int arr[n];
+        for(int i = 0 ; i < n ; i ++)cin >> arr[i];
+
+        //initial value zeros
+
+        memset(freq , 0 , sizeof freq);
+
+        for(int i = 0 ; i < n ; i ++){
+            freq[arr[i]] ++ ;
+
+        }
+
+        int ans = -1 ;
+
+        for(int i = 0 ; i < n ; i ++){
+            if(freq[arr[i]]>= 3){
+                ans = arr[i] ;
+                break;
+            }
+
+        }
+
+        cout << ans ;
+
+        cout << '\n';
+    }
+
+}
